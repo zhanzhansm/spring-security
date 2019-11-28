@@ -21,6 +21,7 @@ public class ExceptionController {
         Map<String, Object> result = new HashMap<>();
         result.put("id", ex.getId());
         result.put("message", ex.getMessage());
+        result.put("message1", ex.getMessage());
         return result;
 
     }

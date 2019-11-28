@@ -3,9 +3,11 @@ package com.hero.cat.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import com.hero.cat.dto.User;
+import com.hero.cat.exception.UserNotExistException;
 import org.springframework.web.bind.annotation.*;
 
-@RestController("/user")
+@RestController
+@RequestMapping("/user")
 public class UserController {
 
     @RequestMapping("/test1")
@@ -18,7 +20,7 @@ public class UserController {
 
     @GetMapping("/{id:\\d+}")
     public User getInfo(@PathVariable String id) {
-		throw new RuntimeException("user not exist");
+		throw new UserNotExistException("user not exist");
 //        System.out.println("进入getInfo服务");
 //        User user = new User();
 //        user.setUsername("tom");

@@ -45,7 +45,7 @@
     </appender>
 
     <root>
-        <level value="${ROOT_LEVEL}"/>
+        <level value="info"/>
         <appender-ref ref="asyncRootAppender"/>
         <appender-ref ref="stdoutAppender"/>
     </root>
