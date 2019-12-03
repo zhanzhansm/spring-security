@@ -15,10 +15,12 @@ import java.util.concurrent.BlockingDeque;
 @Slf4j
 public class AsyncController {
 
+    @Autowired
     private DeferredResultHolder deferredResultHolder;
     @Autowired
     private MockQueue mockQueue;
 
+    @RequestMapping("order")
     public DeferredResult<String> order() throws Exception{
         log.info("主线程开始");
 
@@ -28,6 +30,7 @@ public class AsyncController {
         DeferredResult<String> deferredResult = new DeferredResult<String>();
         deferredResultHolder.getMap().put(orderNumber,deferredResult);
 
+        log.info("主线程结束");
         return deferredResult;
 
 

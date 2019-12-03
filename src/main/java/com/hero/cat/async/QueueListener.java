@@ -14,6 +14,7 @@ public class QueueListener implements ApplicationListener<ContextRefreshedEvent>
     @Autowired
     private MockQueue mockQueue;
 
+    @Autowired
     private DeferredResultHolder deferredResultHolder;
 
 
@@ -29,6 +30,6 @@ public class QueueListener implements ApplicationListener<ContextRefreshedEvent>
                     mockQueue.setCompleteOrder(null);
                 }
             }
-        });
+        }).start();
     }
 }

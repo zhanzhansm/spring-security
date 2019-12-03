@@ -1,17 +1,17 @@
 package com.hero.cat.config;
 
-import com.hero.cat.Interceptor.MyInterceptor;
 import com.hero.cat.filter.MyFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-//@Configuration
-public class WebConfig extends WebMvcConfigurerAdapter {
+@Configuration
+@EnableWebMvc
+public class WebConfig implements WebMvcConfigurer {
 
     @SuppressWarnings("unused")
     @Autowired
